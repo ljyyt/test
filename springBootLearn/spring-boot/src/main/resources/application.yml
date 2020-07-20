@@ -1,0 +1,46 @@
+
+#开发环境
+server:
+  port: 8081
+spring:
+  profiles:
+    active: dev #激活指定配置
+  datasource:
+    username: root
+    password: 123456
+  
+
+#整合druid，配置数据源
+
+
+person:
+  lastName: 李军义
+  age: 18
+  sex: 男
+  #Map {key: value}
+  skill: {en: 六级,zh: 三甲}
+  #list
+  hobby:
+    - 读书
+    - 看电影
+    - 素描
+  dog:
+    name: 小黄
+    color: 黑色
+
+
+
+
+--- #三个短横线分割多个profile区（文档块）
+#生产环境A
+server:
+  port: 8082
+spring:
+  profiles: prodA82 #表示未指定默认配置
+---
+#生产环境B
+server:
+  port: 8083
+spring:
+  profiles:
+    active: prodB83
